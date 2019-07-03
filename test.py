@@ -7,7 +7,7 @@ tty = "/dev/ttyUSB1"
 baud = 115200
 
 ssid = "WAGWAN"
-pass = "_estVmbUl45oi2jas80)19#@t^J"
+password = "_estVmbUl45oi2jas80)19#@t^J"
 
 
 dongle = ESP8266(tty, baud)
@@ -21,7 +21,7 @@ dongle.wifi_mode = 1 # set Station/client mode
 print(dongle.wifi_mode)#check mode
 
 if dongle.wifi_status=="NOT connect to an AP":
-	dongle.connect(ssid, pass, 10)# connect to your Access Point
+	dongle.connect(ssid, password, 10)# connect to your Access Point
 #print(dongle.wifi_status)# check status
 if dongle.wifi_status=="connected to an AP and its IP is obtained":
 	print("AP: ", dongle.connected_ap, ", address: ", dongle.ap_address)
