@@ -11,9 +11,9 @@ class ESP8266(object):
 		"""
 		Initialize the ESP8266 object
 		:param port: A serial port device
-        :type port: A string, path to device in Unix based systems
-        :param speed: A baudrate value
-        :type speed: an integer value
+		:type port: A string, path to device in Unix based systems
+		:param speed: A baudrate value
+		:type speed: an integer value
 		"""
 		self.serial_port = serial.Serial(str(port), speed, timeout=1)
 		if not self.serial_port.isOpen():
@@ -57,9 +57,9 @@ class ESP8266(object):
 		""" 
 		Returns the response from the ESP8266 module after sending a command 
 		:param expected: The expected tailstring
-        :type ssid: A string
-        :param timeout: Time in seconds to wait for response before giving up
-        :type password: integer
+		:type ssid: A string
+		:param timeout: Time in seconds to wait for response before giving up
+		:type password: integer
 		"""
 		lines = []
 		timer = 0;
@@ -215,11 +215,11 @@ class ESP8266(object):
 		""" 
 		connects to a WiFi Network and returns the IP address
 		:param ssid: Name of the WIFI AP
-        :type ssid: A string
-        :param password: The password for the AP
-        :type password: A string
-        :param timeout: The time to wait for a response before 
-        :type timeout: int
+		:type ssid: A string
+		:param password: The password for the AP
+		:type password: A string
+		:param timeout: The time to wait for a response before 
+		:type timeout: int
 		"""
 		if(self.wifi_status=="NOT connect to an AP"):# Disconnected, need to connect
 			self.wifi_mode = 1# set to client
@@ -262,13 +262,13 @@ class ESP8266(object):
 		"""
 		Updates a thingspeak channel with values using a write API key
 		:param URL: URL for thingspeak API, actually an IP address works better
-        :type URL: A string
-        :param port: The connection port, 80 for TCP
-        :type port: int
-        :param values: The values to be updated in the fields, follows order: field1, field2, e.t.c
-        :type values: list
-        :param key: The thingspeak write API key
-        :type key: A string
+		:type URL: A string
+		:param port: The connection port, 80 for TCP
+		:type port: int
+		:param values: The values to be updated in the fields, follows order: field1, field2, e.t.c
+		:type values: list
+		:param key: The thingspeak write API key
+		:type key: A string
 		"""
 		#construct an update query string
 		query = "GET /update?key="+str(key)+"&field1="+str(values)+"\r\n"
